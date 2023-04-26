@@ -1,0 +1,139 @@
+@charset "utf-8";
+@use "../base/mixins" as *;
+
+/** @section Card */
+
+.card {
+    color: var(--primary-text);
+    background: var(--card-background);
+    padding: var(--card-padding);
+    border-radius: var(--rounded-corner);
+    box-shadow: 0 4rem 4rem rgba(0, 0, 0, .4);
+    position: relative;
+    &::before,
+    &::after {
+        background: url("images/sprites.svg") no-repeat;
+        display: block;
+        position: absolute;
+        left: 50%;
+        content: "";
+    }
+    &::before {
+        background-position: 0 -14px;
+        width: 240px;
+        height: 104px;
+        margin-left: -120px;
+        top: 0;
+    }
+    &::after {
+        background-position: 0 -1063px;
+        width: 237px;
+        height: 180px;
+        margin-left: -118.5px;
+        top: -107px;
+    }
+    details {
+        padding: var(--qa-padding);
+        border-bottom: var(--qa-border);
+        &[open] {
+            summary {
+                &::after {
+                    background-position: 0 -7px;
+                }
+                .subtitle {
+                    font-weight: bold;
+                    color: inherit;
+                }
+            }
+        }
+        > summary {
+            // Remove the default marker (for browsers which do not support `display: list-item` on `summary` elements)
+            &::-webkit-details-marker {
+                display: none; // Safari 16.4-, Safari iOS 16.4-
+            }
+        }
+    }
+    summary {
+        display: block;
+        padding-right: 2rem;
+        position: relative;
+        &::after {
+            background: url("images/sprites.svg") no-repeat;
+            display: block;
+            width: 10px;
+            height: 7px;
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translateY(calc(7px / -2));
+            content: "";
+        }
+        &:hover,
+        &:focus {
+            .subtitle {
+                color: var(--text-hover);
+            }
+        }
+    }
+    p {
+        color: var(--neutral-secondary);
+        margin: var(--answer-margin);
+    }
+    .title {
+        font-size: var(--title-size);
+        text-align: center;
+        margin-bottom: var(--title-margin);
+    }
+    .subtitle {
+        font-weight: normal;
+        font-size: var(--subtitle-size);
+        color: var(--neutral-primary);
+    }
+    @include css-media-queries ($from-breakpoint: tablet) {
+        --card-padding: 7.1rem 2.4rem 8.3rem 47.4rem;
+        --title-margin: 2.4rem;
+        &::before,
+        &::after {
+            width: 389px;
+            margin-left: 0;
+            left: 0;
+        }
+        &::before {
+            background-position: right -418px;
+            height: 100%;
+        }
+        &::after {
+            background-position: -85px -1243px;
+            height: 359px;
+            top: 62px;
+        }
+        summary {
+            padding-right: 3.5rem;
+            &::after {
+                right: 1.5rem;
+            }
+        }
+        p {
+            margin-right: 3.5rem;
+        }
+        .title {
+            text-align: initial;
+            &::before {
+                background: url("images/sprites.svg") no-repeat 0 -1602px;
+                display: block;
+                width: 191px;
+                height: 184px;
+                position: absolute;
+                top: 200px;
+                left: -93px;
+                z-index: 1;
+                content: "";
+            }
+        }
+    }
+    @include css-media-queries ($from-breakpoint: wide) {
+        --card-padding: 7.1rem 9.4rem 8.3rem 47.4rem;
+        width: 35.2rem;
+        margin: 13rem auto;
+    }
+}

@@ -1,0 +1,31 @@
+@charset "utf-8";
+
+// Variables
+:root {
+    // Font
+    --font: "Kumbh Sans", "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+
+    // Colours
+    --primary-text: hsl(238, 29%, 16%);
+    --text-hover: hsl(14, 88%, 65%);
+    --primary-background: hsl(273, 75%, 66%);
+    --secondary-background: hsl(240, 73%, 65%);
+    --neutral-primary: hsl(237, 12%, 33%);
+    --neutral-secondary: hsl(240, 6%, 50%);
+    --border-colour: hsl(240, 5%, 91%);
+    --card-background: white;
+
+    // Text
+    --title-size: 2.8rem;
+    --subtitle-size: 1.4rem;
+    --text-size: 1.2rem;
+
+    // Margins, paddings, borders and corners
+    --outer-margin: 14.8rem 2.4rem 8.5rem;
+    --card-padding: 13.5rem 2.4rem 4.8rem;
+    --rounded-corner: 2.2rem;
+    --title-margin: 3.8rem;
+    --qa-padding: 2rem 0 1.6rem;
+    --qa-border: 1px solid var(--border-colour);
+    --answer-margin: 1.4rem 2rem 0.3rem 0;
+}

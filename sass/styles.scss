@@ -1,0 +1,21 @@
+@charset "utf-8";
+
+/**
+ * @site FAQ accordion card
+ * @author Victor Brito
+ */
+
+@use "base/mixins" with (
+    $media-queries-breakpoints: (
+        tablet: 834,
+        wide: 968
+    )
+    // Add the enabled browser support to take into account here if different from the default browser enabled support
+    // Add the minimal browser version to take into account here if different from the default browser support
+);
+@use "variables";
+@use "base/reset";
+@use "base/print";
+@use "typo/font-face";
+@use "layout/layout";
+@use "contents/card";
