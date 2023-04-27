@@ -51,6 +51,8 @@ Users should be able to:
 
 I learned how to show and hide the answers of the questions without using any line of JavaScript.
 
+Safari is buggy when using a pseudo-element with a height defined at 100%: when opening an answer, the container does not fit its new calculated height.
+
 ### Continued development
 
 Even if I did not feel I spent too much time carrying out this challenge, I still have to learn about how to make front-end development in a more efficient way and to learn to manage to build web pages without seeming to be too slow.
